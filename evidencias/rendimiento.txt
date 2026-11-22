@@ -1,0 +1,18 @@
+Entorno de medición
+  Node: v24.11.0
+  Sistema: Darwin 25.6.0 x64
+  Procesador: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz
+  Memoria total: 32.0 GB
+
+Repetición 1: 2.34 ms para 100000 llamadas
+Repetición 2: 2.08 ms para 100000 llamadas
+Repetición 3: 1.93 ms para 100000 llamadas
+Repetición 4: 2.10 ms para 100000 llamadas
+Repetición 5: 2.10 ms para 100000 llamadas
+
+Mínimo:   1.93 ms
+Máximo:   2.34 ms
+Promedio: 2.11 ms
+Tiempo por llamada (promedio): 0.021 microsegundos
+Suma de control de los resultados: 8274601.65
+Referencia de CP-16: menos de 1000 ms -> CUMPLE

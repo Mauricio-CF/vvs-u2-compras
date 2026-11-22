@@ -19,7 +19,7 @@ Función bajo prueba: `calcularTotal(precio, cantidad, descuento)`
 | CP-13 | RF-05 | Datos inválidos (no finito) | precio=100; cantidad=Infinity; descuento=10 | TypeError | Media | Aprobado |
 | CP-14 | RF-05 | Datos inválidos (valor ausente) | precio=100; cantidad=1; descuento=undefined | TypeError | Media | Aprobado |
 | CP-15 | RF-01 | Valor límite (precio cero) | precio=0; cantidad=5; descuento=10 | 0 | Baja | Aprobado |
-| CP-16 | RNF-01 | Exploratoria de rendimiento | 100000 llamadas con datos válidos | Tiempo registrado (referencia: menos de 1 s) | Baja | Pendiente |
+| CP-16 | RNF-01 | Exploratoria de rendimiento | 100000 llamadas con datos válidos | Tiempo registrado (referencia: menos de 1 s) | Baja | Aprobado |
 | CP-17 | RF-03 | Valor límite (descuento máximo con decimales) | precio=7.67; cantidad=3; descuento=100 | 0 | Media | Aprobado |
 
 ## Trazabilidad por requisito
