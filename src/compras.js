@@ -14,6 +14,7 @@ function calcularTotal(precio, cantidad, descuento) {
   const subtotal = precio * cantidad;
   const valorDescuento = subtotal * descuento / 100;
   const total = subtotal - valorDescuento;
-  return Math.round(total * 100) / 100;
+  const redondeado = Math.round(total * 100) / 100;
+  return redondeado === 0 ? 0 : redondeado;
 }
 module.exports = { calcularTotal };
