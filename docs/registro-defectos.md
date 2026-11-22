@@ -6,12 +6,12 @@ Todos los defectos se encontraron ejecutando `npm test` sobre el código inicial
 
 | ID | Defecto | Requisito | Casos que fallan | Severidad | Estado |
 |---|---|---|---|---|---|
-| DEF-01 | Acepta un precio negativo | RF-04 | CP-06 | Alta | Abierto |
-| DEF-02 | Acepta una cantidad menor o igual a 0 | RF-04 | CP-07, CP-08 | Alta | Abierto |
-| DEF-03 | Acepta un descuento fuera del rango 0 a 100 | RF-04 | CP-09, CP-10 | Alta | Abierto |
-| DEF-04 | No rechaza entradas no numéricas ni no finitas | RF-05 | CP-11, CP-12, CP-13, CP-14 | Alta | Abierto |
-| DEF-05 | No redondea el total a dos decimales | RF-03 | CP-03 | Media | Abierto |
-| DEF-06 | El descuento del 100 % devuelve -0 con ciertos decimales | RF-03 | CP-17 | Baja | Abierto |
+| DEF-01 | Acepta un precio negativo | RF-04 | CP-06 | Alta | Corregido |
+| DEF-02 | Acepta una cantidad menor o igual a 0 | RF-04 | CP-07, CP-08 | Alta | Corregido |
+| DEF-03 | Acepta un descuento fuera del rango 0 a 100 | RF-04 | CP-09, CP-10 | Alta | Corregido |
+| DEF-04 | No rechaza entradas no numéricas ni no finitas | RF-05 | CP-11, CP-12, CP-13, CP-14 | Alta | Corregido |
+| DEF-05 | No redondea el total a dos decimales | RF-03 | CP-03 | Media | Corregido |
+| DEF-06 | El descuento del 100 % devuelve -0 con ciertos decimales | RF-03 | CP-17 | Baja | Corregido |
 
 ## Detalle
 

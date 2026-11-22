@@ -1,0 +1,31 @@
+
+> vvs-u2-compras@1.0.0 test
+> jest --runInBand --verbose
+
+PASS tests/compras.test.js
+  calcularTotal
+    Cálculos con datos válidos (RF-01, RF-02 y RF-03)
+      ✓ CP-01: calcula el subtotal sin descuento (2 ms)
+      ✓ CP-02: aplica un descuento del 10 %
+      ✓ CP-03: redondea el total a dos decimales (1 ms)
+      ✓ CP-04: un descuento del 100 % deja el total en 0
+      ✓ CP-05: acepta la cantidad mínima válida (1) (1 ms)
+      ✓ CP-15: un precio de 0 es válido y el total es 0
+    Valores fuera de rango (RF-04)
+      ✓ CP-06: rechaza un precio negativo (2 ms)
+      ✓ CP-07: rechaza una cantidad igual a 0 (1 ms)
+      ✓ CP-08: rechaza una cantidad negativa (1 ms)
+      ✓ CP-09: rechaza un descuento menor que 0
+      ✓ CP-10: rechaza un descuento mayor que 100
+    Entradas no numéricas o no finitas (RF-05)
+      ✓ CP-11: rechaza un precio escrito como texto (1 ms)
+      ✓ CP-12: rechaza NaN
+      ✓ CP-13: rechaza valores infinitos (1 ms)
+      ✓ CP-14: rechaza un descuento ausente (undefined)
+      ✓ CP-17: un descuento del 100 % devuelve 0 también con decimales
+
+Test Suites: 1 passed, 1 total
+Tests:       16 passed, 16 total
+Snapshots:   0 total
+Time:        0.63 s, estimated 1 s
+Ran all test suites.
