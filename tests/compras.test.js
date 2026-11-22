@@ -65,5 +65,11 @@ describe('calcularTotal', () => {
     test('CP-14: rechaza un descuento ausente (undefined)', () => {
       expect(() => calcularTotal(100, 1, undefined)).toThrow(TypeError);
     });
+
+        test('CP-17: un descuento del 100 % devuelve 0 también con decimales', () => {
+      // Con 7.67 por 3 los decimales binarios dejan una diferencia mínima y el redondeo
+      // la convierte en -0. Hay que comprobar que el resultado sea un 0 de verdad.
+      expect(calcularTotal(7.67, 3, 100)).toBe(0);
+    });
   });
 });

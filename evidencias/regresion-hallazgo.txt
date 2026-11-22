@@ -1,0 +1,48 @@
+
+> vvs-u2-compras@1.0.0 test
+> jest --runInBand --verbose
+
+FAIL tests/compras.test.js
+  calcularTotal
+    Cálculos con datos válidos (RF-01, RF-02 y RF-03)
+      ✓ CP-01: calcula el subtotal sin descuento (2 ms)
+      ✓ CP-02: aplica un descuento del 10 %
+      ✓ CP-03: redondea el total a dos decimales
+      ✓ CP-04: un descuento del 100 % deja el total en 0
+      ✓ CP-05: acepta la cantidad mínima válida (1)
+      ✓ CP-15: un precio de 0 es válido y el total es 0
+    Valores fuera de rango (RF-04)
+      ✓ CP-06: rechaza un precio negativo (3 ms)
+      ✓ CP-07: rechaza una cantidad igual a 0
+      ✓ CP-08: rechaza una cantidad negativa
+      ✓ CP-09: rechaza un descuento menor que 0 (1 ms)
+      ✓ CP-10: rechaza un descuento mayor que 100 (1 ms)
+    Entradas no numéricas o no finitas (RF-05)
+      ✓ CP-11: rechaza un precio escrito como texto
+      ✓ CP-12: rechaza NaN (1 ms)
+      ✓ CP-13: rechaza valores infinitos (1 ms)
+      ✓ CP-14: rechaza un descuento ausente (undefined)
+      ✕ CP-17: un descuento del 100 % devuelve 0 también con decimales (2 ms)
+
+  ● calcularTotal › Entradas no numéricas o no finitas (RF-05) › CP-17: un descuento del 100 % devuelve 0 también con decimales
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: -0
+
+      70 |       // Con 7.67 por 3 los decimales binarios dejan una diferencia mínima y el redondeo
+      71 |       // la convierte en -0. Hay que comprobar que el resultado sea un 0 de verdad.
+    > 72 |       expect(calcularTotal(7.67, 3, 100)).toBe(0);
+         |                                           ^
+      73 |     });
+      74 |   });
+      75 | });
+
+      at Object.toBe (tests/compras.test.js:72:43)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 15 passed, 16 total
+Snapshots:   0 total
+Time:        0.582 s, estimated 1 s
+Ran all test suites.
