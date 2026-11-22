@@ -1,0 +1,209 @@
+
+> vvs-u2-compras@1.0.0 test
+> jest --runInBand --verbose
+
+FAIL tests/compras.test.js
+  calcularTotal
+    Cálculos con datos válidos (RF-01, RF-02 y RF-03)
+      ✓ CP-01: calcula el subtotal sin descuento (3 ms)
+      ✓ CP-02: aplica un descuento del 10 %
+      ✕ CP-03: redondea el total a dos decimales (2 ms)
+      ✓ CP-04: un descuento del 100 % deja el total en 0 (1 ms)
+      ✓ CP-05: acepta la cantidad mínima válida (1)
+      ✓ CP-15: un precio de 0 es válido y el total es 0
+    Valores fuera de rango (RF-04)
+      ✕ CP-06: rechaza un precio negativo
+      ✕ CP-07: rechaza una cantidad igual a 0
+      ✕ CP-08: rechaza una cantidad negativa
+      ✕ CP-09: rechaza un descuento menor que 0 (1 ms)
+      ✕ CP-10: rechaza un descuento mayor que 100
+    Entradas no numéricas o no finitas (RF-05)
+      ✕ CP-11: rechaza un precio escrito como texto (1 ms)
+      ✕ CP-12: rechaza NaN
+      ✕ CP-13: rechaza valores infinitos
+      ✕ CP-14: rechaza un descuento ausente (undefined) (1 ms)
+
+  ● calcularTotal › Cálculos con datos válidos (RF-01, RF-02 y RF-03) › CP-03: redondea el total a dos decimales
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 50.97
+    Received: 50.9745
+
+      12 |
+      13 |     test('CP-03: redondea el total a dos decimales', () => {
+    > 14 |         expect(calcularTotal(19.99, 3, 15)).toBe(50.97);
+         |                                             ^
+      15 |     });
+      16 |
+      17 |     test('CP-04: un descuento del 100 % deja el total en 0', () => {
+
+      at Object.toBe (tests/compras.test.js:14:45)
+
+  ● calcularTotal › Valores fuera de rango (RF-04) › CP-06: rechaza un precio negativo
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      30 |   describe('Valores fuera de rango (RF-04)', () => {
+      31 |     test('CP-06: rechaza un precio negativo', () => {
+    > 32 |       expect(() => calcularTotal(-0.01, 1, 0)).toThrow(RangeError);
+         |                                                ^
+      33 |     });
+      34 |
+      35 |     test('CP-07: rechaza una cantidad igual a 0', () => {
+
+      at Object.toThrow (tests/compras.test.js:32:48)
+
+  ● calcularTotal › Valores fuera de rango (RF-04) › CP-07: rechaza una cantidad igual a 0
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      34 |
+      35 |     test('CP-07: rechaza una cantidad igual a 0', () => {
+    > 36 |       expect(() => calcularTotal(10, 0, 0)).toThrow(RangeError);
+         |                                             ^
+      37 |     });
+      38 |
+      39 |     test('CP-08: rechaza una cantidad negativa', () => {
+
+      at Object.toThrow (tests/compras.test.js:36:45)
+
+  ● calcularTotal › Valores fuera de rango (RF-04) › CP-08: rechaza una cantidad negativa
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      38 |
+      39 |     test('CP-08: rechaza una cantidad negativa', () => {
+    > 40 |       expect(() => calcularTotal(10, -3, 0)).toThrow(RangeError);
+         |                                              ^
+      41 |     });
+      42 |
+      43 |     test('CP-09: rechaza un descuento menor que 0', () => {
+
+      at Object.toThrow (tests/compras.test.js:40:46)
+
+  ● calcularTotal › Valores fuera de rango (RF-04) › CP-09: rechaza un descuento menor que 0
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      42 |
+      43 |     test('CP-09: rechaza un descuento menor que 0', () => {
+    > 44 |       expect(() => calcularTotal(10, 1, -0.01)).toThrow(RangeError);
+         |                                                 ^
+      45 |     });
+      46 |
+      47 |     test('CP-10: rechaza un descuento mayor que 100', () => {
+
+      at Object.toThrow (tests/compras.test.js:44:49)
+
+  ● calcularTotal › Valores fuera de rango (RF-04) › CP-10: rechaza un descuento mayor que 100
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      46 |
+      47 |     test('CP-10: rechaza un descuento mayor que 100', () => {
+    > 48 |       expect(() => calcularTotal(10, 1, 100.01)).toThrow(RangeError);
+         |                                                  ^
+      49 |     });
+      50 |   });
+      51 |
+
+      at Object.toThrow (tests/compras.test.js:48:50)
+
+  ● calcularTotal › Entradas no numéricas o no finitas (RF-05) › CP-11: rechaza un precio escrito como texto
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+      52 |   describe('Entradas no numéricas o no finitas (RF-05)', () => {
+      53 |     test('CP-11: rechaza un precio escrito como texto', () => {
+    > 54 |       expect(() => calcularTotal('100', 1, 10)).toThrow(TypeError);
+         |                                                 ^
+      55 |     });
+      56 |
+      57 |     test('CP-12: rechaza NaN', () => {
+
+      at Object.toThrow (tests/compras.test.js:54:49)
+
+  ● calcularTotal › Entradas no numéricas o no finitas (RF-05) › CP-12: rechaza NaN
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+      56 |
+      57 |     test('CP-12: rechaza NaN', () => {
+    > 58 |       expect(() => calcularTotal(NaN, 1, 10)).toThrow(TypeError);
+         |                                               ^
+      59 |     });
+      60 |
+      61 |     test('CP-13: rechaza valores infinitos', () => {
+
+      at Object.toThrow (tests/compras.test.js:58:47)
+
+  ● calcularTotal › Entradas no numéricas o no finitas (RF-05) › CP-13: rechaza valores infinitos
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+      60 |
+      61 |     test('CP-13: rechaza valores infinitos', () => {
+    > 62 |       expect(() => calcularTotal(100, Infinity, 10)).toThrow(TypeError);
+         |                                                      ^
+      63 |     });
+      64 |
+      65 |     test('CP-14: rechaza un descuento ausente (undefined)', () => {
+
+      at Object.toThrow (tests/compras.test.js:62:54)
+
+  ● calcularTotal › Entradas no numéricas o no finitas (RF-05) › CP-14: rechaza un descuento ausente (undefined)
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+      64 |
+      65 |     test('CP-14: rechaza un descuento ausente (undefined)', () => {
+    > 66 |       expect(() => calcularTotal(100, 1, undefined)).toThrow(TypeError);
+         |                                                      ^
+      67 |     });
+      68 |   });
+      69 | });
+
+      at Object.toThrow (tests/compras.test.js:66:54)
+
+Test Suites: 1 failed, 1 total
+Tests:       10 failed, 5 passed, 15 total
+Snapshots:   0 total
+Time:        0.627 s
+Ran all test suites.
